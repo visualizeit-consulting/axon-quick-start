@@ -2,6 +2,7 @@ package io.axoniq.labs.chat.query.rooms.messages;
 
 import io.axoniq.labs.chat.coreapi.MessagePostedEvent;
 import io.axoniq.labs.chat.coreapi.RoomMessagesQuery;
+import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.eventhandling.Timestamp;
 import org.axonframework.queryhandling.QueryHandler;
@@ -12,6 +13,7 @@ import java.time.Instant;
 import java.util.List;
 
 @Component
+@ProcessingGroup("messages")
 public class ChatMessageProjection {
 
     private final ChatMessageRepository repository;
